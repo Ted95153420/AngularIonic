@@ -1,8 +1,17 @@
 angular.module('bookretrievalapp.controllers',[]).
 	controller('bookcontroller', function($scope, returnapiresultservice) {
-		returnapiresultservice.getbookdetails().then(function(data)
+		
+		$scope.isbnnumber = '';
+		
+		
+		
+		$scope.register = function()
 		{
-			$scope.bookdata = data;
-		});
+			alert("You just clicked register");
+			returnapiresultservice.getbookdetails($scope.isbnnumber).then(function(data)
+			{
+				$scope.bookdata = data;
+			});
+		}
 });
  
