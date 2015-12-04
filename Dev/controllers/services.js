@@ -4,11 +4,16 @@ angular.module('f1driverapp.services', []).
     var testingAPI = {};
 
     testingAPI.getDrivers = function() {
-		return 'Proof Of Concept';
-      /*return $http({
-        method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
-      }); */
+       //Just use the API to get any old book.
+	   return $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699').then
+		(function(data)
+		{
+			return data;
+		},
+		function(error)
+		{
+			return 'something went wrong';
+		});
     }
 
     return testingAPI;

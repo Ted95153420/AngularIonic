@@ -1,7 +1,7 @@
 angular.module('f1driverapp.controllers',[]).
 	controller('drivercontroller', function($scope, returnapiresultservice) {
 	
-		$scope.greatest = "Ayrton Senna";
+		$scope.hardcodedbooktitle = "Harry Potter";
 		$scope.stufffromservice = returnapiresultservice.getDrivers();
 });
 
