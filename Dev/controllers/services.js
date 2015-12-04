@@ -5,8 +5,8 @@ angular.module('f1driverapp.services',[]).factory('returnapiresultservice', func
             var bookDetailPromise =  $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699')
             .then(function(response) 
 			{
-				alert("YES");
-                //return response.data;
+				//alert("YES");
+                return response.data;
             },
 			function(error)
 			{
