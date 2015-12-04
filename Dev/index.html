@@ -9,7 +9,15 @@
 
   <!-- <body ng-controller="drivers-controller"> -->
   <body ng-app="bookretrievalapp" ng-controller="bookcontroller"> <br>
-    <h1>total Items : {{bookdata.totalItems}}</h1>
+	<!-- Get the book data -->
+	<form name="isbninputform">
+		<h2>
+			Please enter an ISBN Number
+			<input type="text" name="isbninput" ng-model="isbnnumber" required>
+		</h2>
+	</form>
+	<h3>ISBN entered : {{isbnnumber}}</h3>
+    <h3>Items retrieved : {{bookdata.totalItems}}</h3>
 	<br><br>
   </body>
 </html>
