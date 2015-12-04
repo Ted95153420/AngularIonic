@@ -21,3 +21,19 @@ would be nice to have an IDE where everything is on one place - WebStorm?> NoteP
 PITFALLS - obsessed with making iphone App - easy to loose track of angular fundamentals.
 For example data retrieval using a service. What is the difference between a service and a factory.??\
 
+
+NOTHING displayed, despite calling the URL and having a databinding dev tools said there was no error. Just to see if your promise returns with no error, I used
+return $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699').then
+		(function(response)
+		{
+			alert(YES);
+			//return response.data;
+		},
+		function(error)
+		{
+			//return 'something went wrong';
+			alerd("NOPE");
+		});
+		
+- the above displayed 'YES', so I knew that the promise was working...
+
