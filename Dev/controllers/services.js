@@ -1,4 +1,4 @@
-angular.module('f1driverapp.services',[]).factory('returnapiresultservice', function($http) {
+angular.module('bookretrievalapp.services',[]).factory('returnapiresultservice', function($http) {
     return {
 		getbookdetails: function() 
 		{

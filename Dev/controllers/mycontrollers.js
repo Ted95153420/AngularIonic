@@ -1,7 +1,5 @@
-angular.module('f1driverapp.controllers',[]).
-	controller('drivercontroller', function($scope, returnapiresultservice) {
-	
-		$scope.hardcodedbooktitle = "Harry Potter";
+angular.module('bookretrievalapp.controllers',[]).
+	controller('bookcontroller', function($scope, returnapiresultservice) {
 		returnapiresultservice.getbookdetails().then(function(data)
 		{
 			$scope.bookdata = data;

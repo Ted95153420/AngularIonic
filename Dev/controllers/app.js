@@ -1,4 +1,4 @@
-angular.module('f1driverapp', [
-  'f1driverapp.controllers',
-  'f1driverapp.services'
+angular.module('bookretrievalapp', [
+  'bookretrievalapp.controllers',
+  'bookretrievalapp.services'
 ]);
