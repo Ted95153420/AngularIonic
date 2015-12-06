@@ -19,6 +19,8 @@
 	</form>
 	<h3>ISBN entered : {{isbnnumber}}</h3>
     <h3>Items retrieved : {{bookdata.totalItems}}</h3>
+	<h3>Title : {{bookdata.items[0].volumeInfo.title}}</h3>
+	<img src={{bookdata.items[0].volumeInfo.imageLinks.thumbnail}} />
 	<br><br>
   </body>
 </html>
