@@ -19,4 +19,4 @@ angular.module('bookretrievalapp.services',[]).factory('returnapiresultservice',
         }
     }
 });
-	
+	});
