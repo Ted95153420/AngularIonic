@@ -39,3 +39,7 @@ return $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699'
 		
 - the above displayed 'YES', so I knew that the promise was working...
 
+
+IOS - must use OSX to build IOS app. I had already built my repo in windows. Just downloaded the android SDK and developed for android instead.
+All I want is the simplest route to getting a mobile app up and running.
+
