@@ -5,9 +5,9 @@ angular.module('bookretrievalapp.controllers',[]).
 		
 		
 		
-		$scope.register = function()
+		$scope.register = function(isbn)
 		{
-			returnapiresultservice.getbookdetails($scope.isbnnumber).then(function(data)
+			returnapiresultservice.getbookdetails(isbn).then(function(data)
 			{
 				$scope.bookdata = data;
 				//$scope.bookInfo();

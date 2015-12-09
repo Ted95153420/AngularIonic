@@ -5,7 +5,6 @@ angular.module('bookretrievalapp.services',[]).factory('returnapiresultservice',
             var bookDetailPromise =  $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbnnumber)
             .then(function(response) 
 			{
-				//alert("YES");
                 return response.data;
             },
 			function(error)
