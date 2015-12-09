@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> 
+		p.test {
+		width: 20em; 
+		border: 1px solid #000000;
+		word-wrap: break-word;;
+		}
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+	<script src="js/mycontrollers.js" type="text/javascript"></script>
+	<script src="js/services.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="starter" ng-controller="bookcontroller">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Simple Book Search</h1>
+      </ion-header-bar>
+      <ion-content>
+		<div class="list">
+			<label class="item item-input item-floating-label">
+				<span class="input-label">ISBN Number</span>
+				<input type="text" placeholder="ISBN Number" ng-model="isbnnumber" required>
+			</label>
+		</div>
+		<button ng-click="register(isbnnumber)" class="button button-block button-calm">
+				Search for ISBN# {{isbnnumber}}
+		</button>
+		<p>Number of Items Found : {{bookdata.totalItems}}</p>
+		<ion-list>
+			<ion-item ng-repeat="bookItem in bookdata.items">
+					<img ng-src="{{bookItem.volumeInfo.imageLinks.thumbnail}}">
+					<h2>{{bookItem.volumeInfo.title}}</h2>
+					<h3>{{bookItem.volumeInfo.publisher}}</h3>
+					<p class="test">{{bookItem.volumeInfo.description}}</p>
+			</ion-item>
+		</ion-list>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

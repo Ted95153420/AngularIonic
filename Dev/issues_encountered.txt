@@ -1,0 +1,45 @@
+Issues encountered.
+
+USEFUL LINK :  http://plnkr.co/edit/gIMsjk?p=info
+
+ISSUE 1
+
+Services.js
+
+$http.get('http://ergast.com/api/f1/1988/driverStandings.json').then(
+				// function(response){
+					// return response;
+				// },
+				// function(error){
+					// return "some Error happened"
+				// });
+				
+not working. Returned string representing subset of data and went from there...
+
+
+Development REALLY slow - switching between text editors / refreshing index page / relying solely on dev tools not a viable option
+would be nice to have an IDE where everything is on one place - WebStorm?> NotePad++ easy to overwrite work... USE Source Control
+
+PITFALLS - obsessed with making iphone App - easy to loose track of angular fundamentals.
+For example data retrieval using a service. What is the difference between a service and a factory.??\
+
+
+NOTHING displayed, despite calling the URL and having a databinding dev tools said there was no error. Just to see if your promise returns with no error, I used
+return $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699').then
+		(function(response)
+		{
+			alert(YES);
+			//return response.data;
+		},
+		function(error)
+		{
+			//return 'something went wrong';
+			alerd("NOPE");
+		});
+		
+- the above displayed 'YES', so I knew that the promise was working...
+
+
+IOS - must use OSX to build IOS app. I had already built my repo in windows. Just downloaded the android SDK and developed for android instead.
+All I want is the simplest route to getting a mobile app up and running.
+
