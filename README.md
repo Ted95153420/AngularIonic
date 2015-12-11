@@ -17,77 +17,32 @@ If you want to contribute to this project, then please note that there is a litt
 
 ### Tech / getting stuff to work
 
-Book Searcher uses various components to work properly on your machine. This section should talk you through what you need to know. 
+Book Searcher uses various components to work properly on your machine. This section should talk you through what you need to know to get stuff working on your machine.
 
-* [AngularJS] - HTML enhanced for web apps!
+##### MUST HAVE
+* [Git] - download and install git on your machine. Create yourself a github account
+* [GitRepo] - take a look at the Git Repo, clone it. HINT
+
+```sh
+$ git clone https://github.com/Ted95153420/AngularIonic.git
+``` 
+
+Take a couple of minutes to get a basic idea of the directory structure. There are three folders. AndroidBookSearch, AndroidScreenShots and Dev. Ignore AndroidScreenShots and Dev. These were added initially and are were used as a sort of 'playground' by by myself. AndroidBookSearch contains the angular/Ionic App. Navigate to AngularBookSearch/www - the html file references the scripts in the 'js' folder.
+* [node.js] Download and install. Javas package manager is bundled in with this install. Once Installed, use the command line to install cordova and ionic
+
+```sh
+$ npm install -g cordova ionic
+``` 
+
+* [The Android SDK] Once you have the SDK downloaded and installed, you need to check certain things so that the android emulator will run. Run **C:\Users\<your username >\AppData\Local\Android\sdk\tools\android.bat** This will start a dialog which, from now on, will be referred to as the SDK Manager. Select 'Intel x86 Emulator Acellerator (HAXM Installer)'  NOTE : this is located under 'Extras'. Also, once checked, the SDK Manager displays the word 'Installed' next to the HAXM Installer. What it actually means is that it has downloaded the installer and saved it. It has not been run yet. For the installer itself, look in **C:\Users\<your username>\AppData\Local\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager** Run the installer. You **MAY** see the message "This Computer does not support virtualization Technology (VT-x). HAXM cannot be installed" To get round this, navigate to CONTROL PANEL -> PROGRAMS AND FEATURES, then click 'Turn Windows features On/Off' Uncheck 'Hyper-V', then restart your computer and re-run the installer.
+
+##### OPTIONAL
 * [Ace Editor] - awesome web-based text editor
-* [Marked] - a super fast port of Markdown to JavaScript
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
-* [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-### Installation
-
-You need Gulp installed globally:
-
-```sh
-$ npm i -g gulp
-```
-
-```sh
-$ git clone [git-repo-url] dillinger
-$ cd dillinger
-$ npm i -d
-$ mkdir -p downloads/files/{md,html,pdf}
-$ gulp build --prod
-$ NODE_ENV=production node app
-```
-
-### Plugins
-
-Dillinger is currently extended with the following plugins
-
-* Dropbox
-* Github
-* Google Drive
-* OneDrive
-
-Readmes, how to use them in your own application can be found here:
-
-* [plugins/dropbox/README.md] [PlDb]
-* [plugins/github/README.md] [PlGh]
-* [plugins/googledrive/README.md] [PlGd]
-* [plugins/onedrive/README.md] [PlOd]
 
 ### Development
 
 Want to contribute? Great!
 
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ node app
-```
-
-Second Tab:
-```sh
-$ gulp watch
-```
-
-(optional) Third:
-```sh
-$ karma start
-```
 
 ### Todos
 
@@ -106,7 +61,9 @@ MIT
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-
+   [The Android SDK]: <http://developer.android.com/>
+   [Git]: <https://git-scm.com/download>
+   [GitRepo]: <https://github.com/Ted95153420/AngularIonic>
    [dill]: <https://github.com/joemccann/dillinger>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
@@ -127,5 +84,3 @@ MIT
    [PlGh]:  <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
    [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-
-
