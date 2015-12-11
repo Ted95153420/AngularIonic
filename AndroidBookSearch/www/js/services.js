@@ -9,8 +9,7 @@ angular.module('bookretrievalapp.services',[]).factory('returnapiresultservice',
             },
 			function(error)
 			{
-				alert("NOPE");
-				//eturn 'NOPE';
+				alert("Error Details : " + error.status);
 			}
 			);
             // Return the promise to the controller
