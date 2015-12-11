@@ -39,10 +39,12 @@ $ npm install -g cordova ionic
 * [Ace Editor] - awesome web-based text editor
 
 ### Now you have the prerequisites installed
-*Open a command line console. change to the 'AndroidBookSearch' directory within your repo
+*Open a command line console. change to the 'AndroidBookSearch' directory within your repo, then add the Android platform so you can generate an apk and run on the emulator.
 
 ```sh
 $ cd <my repo path>/AndroidBookSearch
+$ cordova platforms add android@5.0.0
+$ ionic build android
 ``` 
 
 Now use ionic to run the android emulator
@@ -53,7 +55,7 @@ $ ionic emulate android
 
 This SHOULD just make the apk and just install it onto the android emulator. Except it doesn't. You have to faff about a little bit first, but after that, 'ionic emulate android' works just fine.
 
-With the emulator running, you need to manually install an apk to it ONCE. Then LEAVE THE EMULATOR RUNNING. Any 'ionic emulate android' command run after this initial (manual) install will do the business (i.e build the apk and install it on the running sinstance of the emulator). So, manually install the apk that is already in the repo you cloned earlier. It is assumed you are already in the 'AndroidBookSearch' folder. Type the following command :-
+**LEAVE THE EMULATOR RUNNING**, you need to manually install an apk to it ONCE. Again, LEAVE THE EMULATOR RUNNING. Any 'ionic emulate android' command run after this initial (manual) install will do the business (i.e build the apk and install it on the running sinstance of the emulator). So, manually install the apk that you generated earlier. It is assumed you are already in the 'AndroidBookSearch' folder. Type the following command :-
 
 ```sh
 $ adb install -r platforms/android/build/outputs/apk/android-debug.apk
@@ -64,7 +66,7 @@ Once you have run this command, you SHOULD be good to go. Go make changes to the
 ```sh
 $ ionic emulate android
 ``` 
-  
+Again, the above will build the apk, then install it on the running instance of the emulator.
 
 ### Development
 
@@ -73,7 +75,7 @@ Want to contribute? Great!. There are so many things you could do with this proj
 
 ### Todos
 
- - Write Tests using protractor
+ - Write Tests using protractor. Hvent so far, but took a look and really do like the look of the layout / syntax.
 
 License
 ----
