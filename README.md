@@ -5,17 +5,15 @@ Book Searcher is an angular app with well, a fairly unoriginal name. Feel free t
   - Allow you to input an ISBN number
   - Display the books thumbnail, publisher and a few words about the book
 
-
-
 > The reason book searcher was written was because I 'just 
 >wanted to'. This is not a commercial application, although do feel free to buy me a pint if you see me out and about. Feel free to contribute to the project. What I'd like to do is scan in an ISBN, or have different tabe to search by author / title etc...
 
-If you want to contribute to this project, then please note that there is a little bit of setup. I talk through this in the most basic way I can in the 'Tech / getting stuff' to work section if you try this and cant get it to work, pleas just ask me. I wont be annoyed / think you are stupid. Infact, I'll be quite flattered that you read the readme as far as you have.
+If you want to contribute to this project, then please note that there is a little bit of setup. I talk through this in the most basic way I can in the 'Prerequisites for building the project / generating an apk' and the  'Now you have the prerequisites installed' sections. If you try this and cant get the app to run on the emulator, please just ask me. I wont be annoyed / think you are stupid. Infact, I'll be quite flattered that you read the readme as far as you have. Also, if you come across anything that is not in this readme, then please update it.
 
 ### Version
 1.0.0
 
-### Tech / getting stuff to work
+### Prerequisites for building the project / generating an apk
 
 Book Searcher uses various components to work properly on your machine. This section should talk you through what you need to know to get stuff working on your machine.
 
@@ -35,21 +33,47 @@ $ npm install -g cordova ionic
 ``` 
 
 * [The Android SDK] Once you have the SDK downloaded and installed, you need to check certain things so that the android emulator will run. Run **C:\Users\<your username >\AppData\Local\Android\sdk\tools\android.bat** This will start a dialog which, from now on, will be referred to as the SDK Manager. Select 'Intel x86 Emulator Acellerator (HAXM Installer)'  NOTE : this is located under 'Extras'. Also, once checked, the SDK Manager displays the word 'Installed' next to the HAXM Installer. What it actually means is that it has downloaded the installer and saved it. It has not been run yet. For the installer itself, look in **C:\Users\<your username>\AppData\Local\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager** Run the installer. You **MAY** see the message "This Computer does not support virtualization Technology (VT-x). HAXM cannot be installed" To get round this, navigate to CONTROL PANEL -> PROGRAMS AND FEATURES, then click 'Turn Windows features On/Off' Uncheck 'Hyper-V', then restart your computer and re-run the installer.
+* add a new PATH. Navigate to CONTROL PANEL -> System and Security -> System. Click the 'Environment Variables...' button within the pop up dialog box. In the lower most list, select the 'PATH' list item. Click 'Edit...' check there is an entry for C:\Users\<your user name>\AppData\Local\Android\sdk\platform-tools\ if this entry is not there, add it. **NOTE - this will require a machine restart**
 
 ##### OPTIONAL
 * [Ace Editor] - awesome web-based text editor
 
+### Now you have the prerequisites installed
+*Open a command line console. change to the 'AndroidBookSearch' directory within your repo
+
+```sh
+$ cd <my repo path>/AndroidBookSearch
+``` 
+
+Now use ionic to run the android emulator
+
+```sh
+$ ionic emulate android
+``` 
+
+This SHOULD just make the apk and just install it onto the android emulator. Except it doesn't. You have to faff about a little bit first, but after that, 'ionic emulate android' works just fine.
+
+With the emulator running, you need to manually install an apk to it ONCE. Then LEAVE THE EMULATOR RUNNING. Any 'ionic emulate android' command run after this initial (manual) install will do the business (i.e build the apk and install it on the running sinstance of the emulator). So, manually install the apk that is already in the repo you cloned earlier. It is assumed you are already in the 'AndroidBookSearch' folder. Type the following command :-
+
+```sh
+$ adb install -r platforms/android/build/outputs/apk/android-debug.apk
+``` 
+
+Once you have run this command, you SHOULD be good to go. Go make changes to the app. Do not close the emulator. From within the AndroidBookSearch folder run the command
+
+```sh
+$ ionic emulate android
+``` 
+  
+
 ### Development
 
-Want to contribute? Great!
+Want to contribute? Great!. There are so many things you could do with this project. Utilise Cordova to get hold of the phones native devices -e.g camera and scan a barcode. Add new tabs to search by author / title. Make device vibrate if no ISBM found. Add settings to turn vibrate on / off. Use your imagination. All push requests will be vetted by myself. 
 
 
 ### Todos
 
- - Write Tests
- - Rethink Github Save
- - Add Code Comments
- - Add Night Mode
+ - Write Tests using protractor
 
 License
 ----
