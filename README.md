@@ -24,6 +24,13 @@ Book Searcher uses various components to work properly on your machine. This sec
 ```sh
 $ git clone https://github.com/Ted95153420/AngularIonic.git
 ``` 
+* [CordovaWhiteListPlugin] - you need to install this. HINT : from within the 'AndroidBookSearch' directory, type the following
+
+```sh
+$ ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
+``` 
+An entry was made in the config.xml to tell the whitelist plugin to allow the app to access the google Apis - this entry has already been made.
+For academic purposes, it is <allow-navigation href="https://www.googleapis.com"/>
 
 Take a couple of minutes to get a basic idea of the directory structure. There are three folders. AndroidBookSearch, AndroidScreenShots and Dev. Ignore AndroidScreenShots and Dev. These were added initially and are were used as a sort of 'playground' by by myself. AndroidBookSearch contains the angular/Ionic App. Navigate to AngularBookSearch/www - the html file references the scripts in the 'js' folder.
 * [node.js] Download and install. Javas package manager is bundled in with this install. Once Installed, use the command line to install cordova and ionic
@@ -90,6 +97,7 @@ MIT
    [The Android SDK]: <http://developer.android.com/>
    [Git]: <https://git-scm.com/download>
    [GitRepo]: <https://github.com/Ted95153420/AngularIonic>
+   [CordovaWhiteListPlugin] : <http://docs.ionic.io/docs/cordova-whitelist>
    [dill]: <https://github.com/joemccann/dillinger>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
