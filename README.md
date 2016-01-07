@@ -24,13 +24,7 @@ Book Searcher uses various components to work properly on your machine. This sec
 ```sh
 $ git clone https://github.com/Ted95153420/AngularIonic.git
 ``` 
-* [CordovaWhiteListPlugin] - you need to install this. HINT : from within the 'AndroidBookSearch' directory, type the following
 
-```sh
-$ ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
-``` 
-An entry was made in the config.xml to tell the whitelist plugin to allow the app to access the google Apis - this entry has already been made.
-For academic purposes, it is <allow-navigation href="https://www.googleapis.com"/>
 
 Take a couple of minutes to get a basic idea of the directory structure. There are three folders. AndroidBookSearch, AndroidScreenShots and Dev. Ignore AndroidScreenShots and Dev. These were added initially and are were used as a sort of 'playground' by by myself. AndroidBookSearch contains the angular/Ionic App. Navigate to AngularBookSearch/www - the html file references the scripts in the 'js' folder.
 * [node.js] Download and install. Javas package manager is bundled in with this install. Once Installed, use the command line to install cordova and ionic
@@ -41,11 +35,20 @@ $ npm install -g cordova ionic
 
 * [The Android SDK] Once you have the SDK downloaded and installed, you need to check certain things so that the android emulator will run. Run **C:\Users\<your username >\AppData\Local\Android\sdk\tools\android.bat** This will start a dialog which, from now on, will be referred to as the SDK Manager. Select 'Intel x86 Emulator Acellerator (HAXM Installer)'  NOTE : this is located under 'Extras'. Also, once checked, the SDK Manager displays the word 'Installed' next to the HAXM Installer. What it actually means is that it has downloaded the installer and saved it. It has not been run yet. For the installer itself, look in **C:\Users\<your username>\AppData\Local\Android\sdk\extras\intel\Hardware_Accelerated_Execution_Manager** Run the installer. You **MAY** see the message "This Computer does not support virtualization Technology (VT-x). HAXM cannot be installed" To get round this, navigate to CONTROL PANEL -> PROGRAMS AND FEATURES, then click 'Turn Windows features On/Off' Uncheck 'Hyper-V', then restart your computer and re-run the installer.
 * add a new PATH. Navigate to CONTROL PANEL -> System and Security -> System. Click the 'Environment Variables...' button within the pop up dialog box. In the lower most list, select the 'PATH' list item. Click 'Edit...' check there is an entry for C:\Users\<your user name>\AppData\Local\Android\sdk\platform-tools\ if this entry is not there, add it. **NOTE - this will require a machine restart**
+* [CordovaWhiteListPlugin] - you need to install this. HINT : from within the 'AndroidBookSearch' directory, type the following
+
+```sh
+$ ionic plugin add https://github.com/apache/cordova-plugin-whitelist.git
+``` 
+An entry was made in the config.xml to tell the whitelist plugin to allow the app to access the google Apis - this entry has already been made.
+For academic purposes, it is <allow-navigation href="https://www.googleapis.com"/>
+
 
 ##### OPTIONAL
 * [Ace Editor] - awesome web-based text editor
 
 ### Now you have the prerequisites installed
+
 *Open a command line console. change to the 'AndroidBookSearch' directory within your repo, then add the Android platform so you can generate an apk and run on the emulator.
 
 ```sh
